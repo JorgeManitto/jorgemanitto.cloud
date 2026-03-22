@@ -220,7 +220,7 @@ class MediaFileController extends Controller
     {
         $request->validate([
             'files'   => ['required', 'array', 'max:20'],
-            'files.*' => ['file', 'max:' . (50 * 1024), 'mimes:' . implode(',', MediaFile::allAllowedExtensions())],
+            'files.*' => ['file', 'mimes:' . implode(',', MediaFile::allAllowedExtensions())],
             'folder'  => ['nullable', 'string', 'max:100'],
         ]);
 
